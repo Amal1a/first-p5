@@ -8,7 +8,7 @@ function setup() {
 
   //basic setup
   frameRate(40);
-  background(0, 0, 0);
+  background(0, 0, 200);
   fill("lightblue");
 }
 
@@ -19,10 +19,16 @@ function getRandInt(max, min = 0) {
 
 function draw() {
   //clear();
+  // fill("blue");
+  // square(300, 300, 200);
+  // fill(getRandInt(255), getRandInt(255), getRandInt(255));
+  // circle(getRandInt(width), getRandInt(height), getRandInt(150));
 }
 function mouseDragged() {
   //mouseX
   //mouseY
+  // fill(getRandInt(255), getRandInt(255), getRandInt(255));
+  // square(mouseX, mouseY, 50);
 }
 function mouseMoved() {
   //mouseX
@@ -33,8 +39,59 @@ function mouseClicked() {
   //mouseY
 }
 
-function keyPressed() {
-  if (keyIsDown(UP_ARROW)) {
-    //
+/* ------ */
+let x = 0;
+let y = 100;
+let yModifier = 5;
+let xModifier = 5;
+
+function draw() {
+  //clear();
+  x += 5;
+  y += 5;
+  if (y + 100 > height) {
+    //y-=5;
+    yModifier = yModifier * -1;
   }
+  if (y + 100 > width) {
+    //y-=5;
+    xModifier = xModifier * -1;
+  }
+
+  if (y < 0) {
+    //y-=5;
+    yModifier = yModifier * -1;
+  }
+  if (x < 0) {
+    //y-=5;
+    xModifier = xModifier * -1;
+  }
+  console.log(y, height);
+
+  fill("hotpink");
+  square(x, y, 100);
+
+  // if (keyIsDown(UP_ARROW)) {
+  //   //
+  //   y = y - 5;
+  // }
+  // if (keyIsDown(DOWN_ARROW)) {
+  //   //
+  //   y = y + 5;
+  // }
+  // if (keyIsDown(LEFT_ARROW)) {
+  //   //
+  //   y = x - 5;
+  // }
+  // if (keyIsDown(RIGHT_ARROW)) {
+  //   //
+  //   y = x + 5;
+  // }
 }
+
+// function keyPressed() {
+//   if (keyIsDown(UP_ARROW)) {
+//     //
+
+//   }
+// }
